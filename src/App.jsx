@@ -1,6 +1,6 @@
 import React from "react"
 import Home from "./Pages/Home"
-import { BrowserRouter as Router,Route , Routes } from "react-router"
+import { HashRouter as Router,Route , Routes } from "react-router"
 import BrandPage from "./Pages/BrandPage"
 import Story from "./components/Story"
 
