@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   automock,
   baymountmockup,
@@ -9,6 +9,16 @@ import {
 } from '../printfiles/index';
 
 function Print() {
+  const [enlargedImage, setEnlargedImage] = useState(null);
+
+  const handleImageClick = (imageSrc) => {
+    if (enlargedImage === imageSrc) {
+      setEnlargedImage(null); // Close the enlarged image if it's already open
+    } else {
+      setEnlargedImage(imageSrc); // Open the clicked image
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-8">
       {/* Main Heading */}
@@ -26,7 +36,8 @@ function Print() {
               <img
                 src={bmmantriad2}
                 alt="BM Mantriad 2"
-                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                onClick={() => handleImageClick(bmmantriad2)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
             </div>
@@ -34,7 +45,8 @@ function Print() {
               <img
                 src={bmmantriad3}
                 alt="BM Mantriad 3"
-                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                onClick={() => handleImageClick(bmmantriad3)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
             </div>
@@ -49,7 +61,8 @@ function Print() {
               <img
                 src={chef}
                 alt="Chef"
-                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                onClick={() => handleImageClick(chef)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
             </div>
@@ -57,7 +70,8 @@ function Print() {
               <img
                 src={baymountmockup}
                 alt="Baymount Mockup"
-                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                onClick={() => handleImageClick(baymountmockup)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
             </div>
@@ -71,7 +85,8 @@ function Print() {
             <img
               src={payoffcard}
               alt="Payoff Card"
-              className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+              onClick={() => handleImageClick(payoffcard)}
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
           </div>
@@ -84,12 +99,33 @@ function Print() {
             <img
               src={automock}
               alt="Auto Mock"
-              className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-96 object-cover transform transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+              onClick={() => handleImageClick(automock)}
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
           </div>
         </div>
       </div>
+
+      {/* Enlarged Image Overlay */}
+      {enlargedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-8 z-50">
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center text-gray-800 hover:bg-gray-200 transition-colors duration-300 shadow-lg"
+            onClick={() => setEnlargedImage(null)}
+          >
+            <span className="text-2xl">×</span>
+          </button>
+
+          {/* Enlarged Image */}
+          <img
+            src={enlargedImage}
+            alt="Enlarged"
+            className="max-w-full max-h-full"
+          />
+        </div>
+      )}
     </div>
   );
 }
