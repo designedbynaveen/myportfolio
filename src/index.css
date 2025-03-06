@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+body{
+  font-family:'montserrat';
+}
+@layer utilities {
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+}
+
+@keyframes rotate-gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-gradient-ring {
+  animation: rotate-gradient 3s linear infinite;
+  z-index: 1; /* Ensure the ring is behind the image */
+}
+
+/* Ensure the image is above the ring */
+img {
+  z-index: 2;
+  position: relative;
+}
