@@ -204,7 +204,7 @@ function Brands() {
             src={tuskertrunk}
             className="w-full h-full object-cover" 
             alt="Post"
-            onMouseOver={(e) => e.currentTarget.src = tusker['one']}
+            onMouseOver={(e) => e.currentTarget.src = tusker['four']}
             onMouseOut={(e) => e.currentTarget.src = tuskertrunk}
           />
         </div>
