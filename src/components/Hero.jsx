@@ -23,6 +23,7 @@ function Hero() {
             src={profile}
             alt='Profile'
           />
+          <p className='text-center m-3'>Click here </p>
         </div>
       </div>
       <div>
