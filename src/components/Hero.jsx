@@ -48,6 +48,7 @@ function Hero() {
         <p> 📞 Mobile No : +91 74487 08598</p>
         <p>📧 Mail : naveensethupathy7@gmail.com</p>
         <p>❗Check Out my stories❗</p>
+        <p className='font-bold'>❗Click on a brand to see all of its creative work❗</p>
       </div>
     </div>
   );

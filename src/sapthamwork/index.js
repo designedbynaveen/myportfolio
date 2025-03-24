@@ -18,6 +18,11 @@ import seventeen from './17.jpg'
 import eighteen from './18.jpg'
 import nineteen from './19.jpg'
 import twenty from './20.jpg'
+import twentyone from './21.jpg'
+import twentytwo from './22.jpg'
+import twentythree from './23.jpg'
+import twentyfour from './24.jpg'
+import twentyfive from './25.jpg'
 const SAPTHAMWORK = {
     one : one,
    two:two,
@@ -38,7 +43,13 @@ const SAPTHAMWORK = {
     seventeen:seventeen,
     eighteen:eighteen,
     nineteen:nineteen,
-    twenty:twenty
+    twenty:twenty,
+    twentyone:twentyone,
+    twentytwo:twentytwo,
+    twentythree:twentythree,
+    twentyfour:twentyfour,
+    twentyfive:twentyfive
+    
 }
 
 export default SAPTHAMWORK;
